@@ -1,0 +1,35 @@
+<App>
+    <JavaScript>
+        var GoogleAnalytics = require("Google/Analytics");
+
+        module.exports.ScreenView = function() {
+            GoogleAnalytics.ScreenView("App-JS");
+        };
+
+        module.exports.TrackEvent = function() {
+            GoogleAnalytics.TrackEvent("js_action", "button_press", "play", "0");
+        };
+    </JavaScript>
+
+    <StackPanel ItemSpacing="20" ContentAlignment="Center">
+        <Button Height="50" Width="300" Background="Black" Clicked="{ScreenView}">
+            <Text TextAlignment="Center" Alignment="Center" Color="White">Generate Screenview From JS</Text>
+        </Button>
+        <Button Height="50" Width="300" Background="Black" Clicked="{TrackEvent}">
+            <Text TextAlignment="Center" Alignment="Center" Color="White">Track Event From JS</Text>
+        </Button>
+        <Button Height="50" Width="300" Background="Black">
+            <Clicked>
+                <GAPageView Page="App-UI"/>
+            </Clicked>
+            <Text TextAlignment="Center" Alignment="Center" Color="White">Generate Screenview From UI</Text>
+        </Button>
+        <Button Height="50" Width="300" Background="Black">
+            <Clicked>
+                <GATrackEvent Category="ui_action" Action="button_press" Label="play" Value="0"/>
+            </Clicked>
+            <Text TextAlignment="Center" Alignment="Center" Color="White">Track Event From UI</Text>
+        </Button>
+    </StackPanel>
+
+</App>
