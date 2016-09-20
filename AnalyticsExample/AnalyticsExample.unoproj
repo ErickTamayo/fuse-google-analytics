@@ -13,5 +13,8 @@
   ],
   "iOS": {
     "BundleIdentifier": "com.ericktamayo.example"
+  },
+  "Android" : {
+    "Package" : "com.ericktamayo.example"
   }
 }

@@ -2,10 +2,12 @@ using Uno.UX;
 using Fuse;
 using Fuse.Controls;
 using Fuse.Triggers.Actions;
-using Google.Analytics;
+using Google.Analytics.JS;
 
 public partial class GATrackEvent: TriggerAction
 {
+    protected AnalyticsModule _analyticsModule;
+
     string _category;
     string _action;
     string _label;
@@ -32,9 +34,19 @@ public partial class GATrackEvent: TriggerAction
     }
 
     [UXConstructor]
-    public GATrackEvent() {}
+    public GATrackEvent() {
+        _analyticsModule = new AnalyticsModule();
+    }
 
     protected override sealed void Perform(Node target) {
-        AnalyticsService.TrackEvent(_category, _action, _label, _value);
+
+        object[] args = new object[4];
+
+        args[0] = _category;
+        args[1] = _action;
+        args[2] = _label;
+        args[3] = _value;
+
+        _analyticsModule.TrackEvent(null, args);
     }
 }

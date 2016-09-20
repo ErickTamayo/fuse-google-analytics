@@ -17,6 +17,7 @@ namespace Google.Analytics.JS
     public sealed class AnalyticsModule : NativeModule
     {
         static readonly AnalyticsModule _instance;
+        static AnalyticsService _analyticsService;
 
         public AnalyticsModule()
         {
@@ -27,19 +28,23 @@ namespace Google.Analytics.JS
             AddMember(new NativeFunction("ScreenView", ScreenView));
             AddMember(new NativeFunction("TrackEvent", TrackEvent));
 
-            Uno.Platform2.Application.Started += AnalyticsService.StartService;
+            _analyticsService = new AnalyticsService();
+
+            Uno.Platform2.Application.Started += _analyticsService.StartService;
+
+            debug_log("Analytics Module Initialized");
         }
 
-        static object ScreenView(Context context, object[] args)
+        public object ScreenView(Context context, object[] args)
         {
             debug_log("Screen View Fired");
 
             var name = (string)args[0];
-            AnalyticsService.ScreenView(name);
+            _analyticsService.ScreenView(name);
             return null;
         }
 
-        static object TrackEvent(Context context, object[] args)
+        public object TrackEvent(Context context, object[] args)
         {
             debug_log("Track Event Fired");
 
@@ -48,7 +53,7 @@ namespace Google.Analytics.JS
             var eventLabel = (args.Length>2) ? (string)args[2] : null;
             var eventValue = (args.Length>3) ? (string)args[3] : null;
 
-            AnalyticsService.TrackEvent(eventCategory, eventAction, eventLabel, eventValue);
+            _analyticsService.TrackEvent(eventCategory, eventAction, eventLabel, eventValue);
 
             return null;
         }
