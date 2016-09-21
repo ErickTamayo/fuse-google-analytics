@@ -54,6 +54,16 @@ This project contains the basic implementation to make the Google Analytics inte
 
 This file contains the configuration of the project. To make analytics work, you must add the bundle identifier and the package. This needs to be the same as your Google configuration file (google-services.xml for Android and GoogleService-Info.plist for iOS). How to get the Google configurations files will be explained later.
 
+Include Google Analytics Project
+
+```
+  "Projects": [
+    "../Google.Analytics/Google.Analytics.unoproj"
+  ],
+```
+
+Configured BundleIdentifier and Package
+
 ```json
 "iOS": {
     "BundleIdentifier": "com.ericktamayo.example"
