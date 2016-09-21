@@ -1,8 +1,14 @@
 # fuse-google-analytics - Beta
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
 This is the integration of the native iOS and Android bindings for Fuse of Google Analytics.
 
 The current Firebase Analytics doesn't have real time analaytics. This package is intended to be able to satisfy the need to register pageviews and events of your Fuse Application in the easiest possible way.
+
+## Contents
+- [AnalyticsExample Project](#analyticsexample-project)
+- [License](#license)
 
 ### AnalyticsExample Project
 
