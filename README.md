@@ -8,7 +8,48 @@ The current Firebase Analytics doesn't have real time analaytics. This package i
 
 ## Contents
 - [AnalyticsExample Project](#analyticsexample-project)
+- [Usage](#usage)
+- [Making the AnalyticsExample Work](#making-the-analyticsexample-work)
+    - [Setting up the Project on Google Console](#setting-up-the-project-on-google-console)
+    - [iOS](#ios)
+    - [Android](#android)
 - [License](#license)
+
+### Usage
+#### Using the Javascript API
+```javascript
+var GoogleAnalytics = require("Google/Analytics");
+
+module.exports.ScreenView = function() {
+    GoogleAnalytics.ScreenView("App-JS");
+};
+
+module.exports.TrackEvent = function() {
+    GoogleAnalytics.TrackEvent("js_action", "button_press", "play", "0");
+};
+```
+
+#### Using as TriggerActions in the UI
+
+```HTML
+<Button Height="50" Width="300" Background="Black">
+    <Clicked>
+        <GAPageView Page="App-UI"/>
+    </Clicked>
+    <Text TextAlignment="Center" Alignment="Center" Color="White">Generate Screenview From UI</Text>
+</Button>
+<Button Height="50" Width="300" Background="Black">
+    <Clicked>
+        <GATrackEvent Category="ui_action" Action="button_press" Label="play" Value="0"/>
+    </Clicked>
+    <Text TextAlignment="Center" Alignment="Center" Color="White">Track Event From UI</Text>
+</Button>
+```
+
+module.exports.TrackEvent = function() {
+    GoogleAnalytics.TrackEvent("js_action", "button_press", "play", "0");
+};
+```
 
 ### AnalyticsExample Project
 
