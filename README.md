@@ -7,8 +7,9 @@ This is the integration of the native iOS and Android bindings for Fuse of Googl
 The current Firebase Analytics doesn't have real time analaytics. This package is intended to be able to satisfy the need to register pageviews and events of your Fuse Application in the easiest possible way.
 
 ## Contents
-- [AnalyticsExample Project](#analyticsexample-project)
 - [Usage](#usage)
+- [Prerequisites](#prerequisites)
+- [AnalyticsExample Project](#analyticsexample-project)
 - [Making the AnalyticsExample Work](#making-the-analyticsexample-work)
     - [Setting up the Project on Google Console](#setting-up-the-project-on-google-console)
     - [iOS](#ios)
@@ -52,6 +53,13 @@ As in
     <Text TextAlignment="Center" Alignment="Center" Color="White">Track Event From UI</Text>
 </Button>
 ```
+## Prerequisites
+
+### iOS
+You need to have [CocoaPods](https://cocoapods.org/) installed for iOS
+
+### Android
+You need to have Google Play Services library installed in your Fuse installation [here](https://www.fusetools.com/docs/preview-and-export/installing-google-play-services) is a guide to do so.
 
 ## AnalyticsExample Project
 
