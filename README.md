@@ -15,7 +15,7 @@ The current Firebase Analytics doesn't have real time analaytics. This package i
     - [Android](#android)
 - [License](#license)
 
-### Usage
+## Usage
 #### Using the Javascript API
 ```javascript
 var GoogleAnalytics = require("Google/Analytics");
@@ -46,7 +46,7 @@ module.exports.TrackEvent = function() {
 </Button>
 ```
 
-### AnalyticsExample Project
+## AnalyticsExample Project
 
 This project contains the basic implementation to make the Google Analytics integration work. Some of these files should be in the same directory as the project that you want integrate Google Analytics. The functions of the files are the following:
 
