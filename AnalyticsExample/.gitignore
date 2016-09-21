@@ -1,4 +1,5 @@
 build
 .uno
 GoogleService-Info.plist
+google_services.xml
 google-services.json
