@@ -30,7 +30,14 @@ module.exports.TrackEvent = function() {
 ```
 
 #### Using as TriggerActions in the UI
+```HTML
+<GAPageView Page="App-UI"/>
+```
 
+```HTML
+<GATrackEvent Category="ui_action" Action="button_press" Label="play" Value="0"/>
+```
+As in
 ```HTML
 <Button Height="50" Width="300" Background="Black">
     <Clicked>
