@@ -98,9 +98,9 @@ This file contains how the integration should be used.
 
 ## Making the AnalyticsExample Work
 
-**Note: You must to be able to install the project in an Android or iOS device. The preview won't work on Mac or Windows. The app will still be able to be previewed however, just you won't see anything happening on your Google Analytics Site**
+**Note:** You must to be able to install the project in an Android or iOS device. The preview won't work on Mac or Windows. The app will still be able to be previewed however, just you won't see anything happening on your Google Analytics Site
 
-**Note for the iOS we asume that you have installed cocoapods, if not refer to https://cocoapods.org/ to install**
+**Note:** for the iOS we asume that you have installed cocoapods, if not refer to https://cocoapods.org/ to install
 
 ### Setting up the Project on Google Console
 
@@ -126,7 +126,7 @@ This file contains how the integration should be used.
 ##### Build your project
 - Run `fuse build -t=iOS -DCOCOAPODS -adebug`
 
-**Notes: CocoaPods the first time will take long downloading the Google Analytics dependencies**
+**Note:** CocoaPods the first time will take long downloading the Google Analytics dependencies
 
 When Xcode opens, sign your code and run on your iPhone. You should see 4 buttons for generating the events. Click on them and your Google Analytics account should have activity.
 
