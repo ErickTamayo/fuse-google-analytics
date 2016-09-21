@@ -46,11 +46,6 @@ module.exports.TrackEvent = function() {
 </Button>
 ```
 
-module.exports.TrackEvent = function() {
-    GoogleAnalytics.TrackEvent("js_action", "button_press", "play", "0");
-};
-```
-
 ### AnalyticsExample Project
 
 This project contains the basic implementation to make the Google Analytics integration work. Some of these files should be in the same directory as the project that you want integrate Google Analytics. The functions of the files are the following:
