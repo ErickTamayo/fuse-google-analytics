@@ -4,7 +4,7 @@
 
 This is the integration of the native iOS and Android bindings for Fuse of Google Analytics.
 
-The current Firebase Analytics doesn't have real time analaytics. This package is intended to be able to satisfy the need to register pageviews and events of your Fuse Application in the easiest possible way.
+The current Firebase Analytics doesn't have real time analytics. This package is intended to be able to satisfy the need to register pageviews and events of your Fuse Application in the easiest possible way.
 
 ## Contents
 - [Usage](#usage)
