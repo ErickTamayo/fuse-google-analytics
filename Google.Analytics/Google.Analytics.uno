@@ -165,12 +165,18 @@ namespace Google.Analytics
             }
 
             Tracker tr = (Tracker) tracker;
-            tr.send(new HitBuilders.EventBuilder()
-                .setCategory(eventCategory)
-                .setAction(eventAction)
-                .setLabel(eventLabel)
-                .setValue(Long.parseLong(eventValue))
-                .build());
+
+            HitBuilders.EventBuilder ev = new HitBuilders.EventBuilder(eventCategory, eventAction);
+
+            if (eventLabel != null) {
+                ev.setLabel(eventLabel);
+            }
+
+            if (eventValue != null) {
+                ev.setValue(Long.parseLong(eventValue));
+            }
+
+            tr.send(ev.build());
 
             GoogleAnalytics.getInstance(com.fuse.Activity.getRootActivity()).dispatchLocalHits();
         @}
@@ -183,10 +189,10 @@ namespace Google.Analytics
             debug_log("Google Analytics not supported in this platform.");
         }
         public void ScreenView(string page) {
-            debug_log("Google Analytics not supported in this platform.");
+            debug_log("[ScreenView] Page:"+page);
         }
         public void TrackEvent(string eventCategory, string eventAction, string eventLabel, string eventValue) {
-            debug_log("Google Analytics not supported in this platform.");
+            debug_log("[Event]\n Category: "+eventCategory+"\n Action: "+eventAction+"\n Label: "+eventLabel+"\n Value: "+eventValue);
         }
     }
 }
