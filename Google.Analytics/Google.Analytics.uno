@@ -8,7 +8,7 @@ using Fuse.Controls;
 using Fuse.Controls.Native;
 using Fuse.Controls.Native.Android;
 using Uno.Threading;
-using Uno.Platform2;
+using Uno.Platform;
 
 namespace Google.Analytics
 {
@@ -19,7 +19,7 @@ namespace Google.Analytics
     {
         [Foreign(Language.ObjC)]
         extern(iOS)
-        public void StartService(ApplicationState state)
+        public void StartService(Fuse.Platform.ApplicationState state)
         @{
             NSError *configureError;
             [[GGLContext sharedInstance] configureWithError:&configureError];
@@ -75,7 +75,7 @@ namespace Google.Analytics
         extern(Android) Java.Object _defaultTracker;
 
         extern(Android)
-        public void StartService(ApplicationState state)
+        public void StartService(Fuse.Platform.ApplicationState state)
         {
             _defaultTracker = createDefaultTracker();
         }
@@ -185,7 +185,7 @@ namespace Google.Analytics
     extern(!mobile)
     internal class AnalyticsService
     {
-        public void StartService(ApplicationState state) {
+        public void StartService(Fuse.Platform.ApplicationState state) {
             debug_log("Google Analytics not supported in this platform.");
         }
         public void ScreenView(string page) {

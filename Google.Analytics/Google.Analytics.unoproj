@@ -2,7 +2,6 @@
   "Packages": [
   	"Fuse",
   	"FuseJS",
-    "FuseCore",
     "Fuse.Scripting"
   ],
   "Includes": [

@@ -23,14 +23,14 @@ namespace Google.Analytics.JS
         {
             if(_instance != null) return;
 
-            Resource.SetGlobalKey(_instance = this, "Google/Analytics");
+            Uno.UX.Resource.SetGlobalKey(_instance = this, "Google/Analytics");
 
             AddMember(new NativeFunction("ScreenView", ScreenView));
             AddMember(new NativeFunction("TrackEvent", TrackEvent));
 
             _analyticsService = new AnalyticsService();
 
-            Uno.Platform2.Application.Started += _analyticsService.StartService;
+            Fuse.Platform.Lifecycle.Started += _analyticsService.StartService;
 
             debug_log("Analytics Module Initialized");
         }
